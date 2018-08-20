@@ -1,0 +1,40 @@
+<div class="container">
+  <h3 class="text-center">List Of Books</h3>
+
+ 
+    
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">author</th>
+            <th scope="col">title</th>
+            <th scope="col">isbn</th>
+            <th scope="col">pages</th>
+            <th scope="col">countryId</th>
+            <th scope="col">cityId</th>
+            <th scope="col">companyId</th>
+            <th scope="col">formatId</th>
+            <th scope="col">description</th>
+            <th scope="col">price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of books; let i = index" (click)="redirectToBook(book)">
+            <th scope="row">{{book.id}}</th>
+              <td>{{book.author}}</td>
+              <td>{{book.title}}</td>
+              <td>{{book.isbn}}</td>
+              <td>{{book.pages}}</td>
+              <td>{{book.countryId}}</td>
+              <td>{{book.cityId}}</td>
+              <td>{{book.companyId}}</td>
+              <td>{{book.formatId}}</td>
+              <td>{{book.description}}</td>
+              <td>{{book.price}}</td>
+          </tr>
+      
+        </tbody>
+      </table>
+ 
+</div>

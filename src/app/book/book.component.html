@@ -1,0 +1,156 @@
+<div class="form-wrapper" *ngIf="isNewBook">
+
+ 
+
+    <h3 class="mb-4">Book Info</h3>
+
+    <div class="form-group">
+      <label for="newAuthor">Author</label>
+      <input class="form-control" id="newAuthor"   [(ngModel)]="newAuthor">
+    </div>
+
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input class="form-control" id="title" [(ngModel)]="newTitle">
+    </div>
+
+    <div class="form-group">
+      <label for="isbn">ISBN</label>
+      <input class="form-control" id="isbn" [(ngModel)]="newIsbn">
+    </div>
+
+    <div class="form-group">
+      <label for="pages">Number of Pages</label>
+      <input class="form-control" id="pages" [(ngModel)]="newPages">
+    </div>
+
+    <div class="form-group">
+      <label for="format">Format</label>
+      <select class="form-control" id="format">
+        <option>Paperback</option>
+        <option>Hardcover</option>
+        <option>Audiobook</option>
+        <option>Leather Bound</option>
+        <option>Spiral Bound</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" rows="3" [(ngModel)]="newDescription"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input class="form-control" id="price" [(ngModel)]="newPrice">
+    </div>
+
+    <hr class="m-1 mb-5 mt-5">
+
+    <h3 class="mb-4">Publisher Info</h3>
+
+    <div class="form-group">
+      <label for="country">Country</label>
+      <select class="form-control" id="country"  name="countryId" [(ngModel)]="newCountryId">
+          <option *ngFor="let country of countriesFromDb" [value]="country.id" >{{country.id}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="city">City</label>
+      <select class="form-control" id="city"  name="cityId" [(ngModel)]="newCityId">
+          <option *ngFor="let city of citiesFromDb" [value]="city.id">{{city.id}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="company">Company</label>
+      <!-- {{companiesFromDb | json}} -->
+     
+      <select class="form-control" id="company"  name="сompanyId"  [(ngModel)]="newCompanyId">
+          <option *ngFor="let company of companiesFromDb" [value]="company.id" >{{company.id}}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-4" (click)="createNewBook()">Submit</button>
+
+  
+</div>
+
+<div class="book form-wrapper" *ngIf="!isNewBook">
+
+  <form #myForm="ngForm" novalidate>
+
+    <h3 class="mb-4">Book Info</h3>
+
+    <div class="form-group">
+      <label for="author">Author</label>
+      <input class="form-control" id="author" name="author" [(ngModel)]="curAuthor">
+    </div>
+
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input class="form-control" id="title" name="title" [(ngModel)]="curTitle">
+    </div>
+
+    <div class="form-group">
+      <label for="isbn">ISBN</label>
+      <input class="form-control" id="isbn"  name="isbn" [(ngModel)]="curIsbn">
+    </div>
+
+    <div class="form-group">
+      <label for="pages">Number of Pages</label>
+      <input class="form-control" id="pages" name="pages" [(ngModel)]="curPages">
+    </div>
+
+    <div class="form-group">
+      <label for="format">Format</label>
+      <select class="form-control" id="format" >
+        <option>Paperback</option>
+        <option>Hardcover</option>
+        <option>Audiobook</option>
+        <option>Leather Bound</option>
+        <option>Spiral Bound</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" rows="3" name="description" [(ngModel)]="curDescription"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input class="form-control" id="price" name="price" [(ngModel)]="curPrice">
+    </div>
+
+    <hr class="m-1 mb-5 mt-5">
+
+    <h3 class="mb-4">Publisher Info</h3>
+
+    <div class="form-group">
+      <label for="country">Country</label>
+      <select class="form-control" id="country"  name="countryId" [(ngModel)]="curCountryId">
+          <option *ngFor="let country of countriesFromDb" [value]="country.id" [selected]="country.id == curCountryId">{{country.id}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="city">City</label>
+      <select class="form-control" id="city"  name="cityId" [(ngModel)]="curCityId">
+          <option *ngFor="let city of citiesFromDb" [value]="city.id" [selected]="city.id == curCityId">{{city.id}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="company">Company</label>
+      <select class="form-control" id="company" name="companyId" [(ngModel)]='curCompanyId'>
+        <option *ngFor="let company of companiesFromDb" [value]="company.id" [selected]="company.id == curCompanyId">{{company.id}} - {{company.name}}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-4"  (click)="editedBook()">Submit</button>
+
+  </form>
+</div>
+
