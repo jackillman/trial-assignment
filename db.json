@@ -38,6 +38,19 @@
       "formatId": 3,
       "description": "To my mind one of the most significant and beautiful books of our time.",
       "price": 223.32
+    },
+    {
+      "id": 4,
+      "author": "George Martin",
+      "title": "Ice and Fire",
+      "isbn": "12143423",
+      "pages": "433",
+      "description": "text",
+      "formatId": "2",
+      "price": "322",
+      "countryId": "3",
+      "cityId": "15",
+      "companyId": "16"
     }
   ],
   "formats": [

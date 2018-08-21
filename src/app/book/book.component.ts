@@ -111,7 +111,7 @@ export class BookComponent implements OnInit,OnDestroy {
         this.router.navigate(
           ['/showcase']
         );
-      },2000)
+      },1000)
 
     })
   }
@@ -125,7 +125,7 @@ export class BookComponent implements OnInit,OnDestroy {
         this.router.navigate(
           ['/showcase']
         );
-      },2000)
+      },1000)
     },err=>{
       console.log(err)
     })
