@@ -2,259 +2,68 @@
   "books": [
     {
       "id": 1,
-      "author": "Miguel De Cervantes1212121212",
-      "title": "Don Quixote1",
-      "isbn": "00609343441",
+      "author": "Miguel De Cervantes",
+      "title": "Don Quixote",
+      "isbn": "0060934344",
       "pages": 992,
-      "description": "This is a great book!",
-      "price": 129.32,
       "countryId": 1,
       "cityId": 5,
-      "companyId": "20",
-      "formatId": "2"
+      "companyId": 1,
+      "formatId": 1,
+      "description": "This is a great book!",
+      "price": 129.32
     },
     {
       "id": 2,
-      "author": "ввв",
-      "title": "ааа",
-      "isbn": "435",
-      "pages": "3",
-      "description": "куекуе",
-      "formatId": "2",
-      "price": "345345",
-      "countryId": "3",
-      "cityId": "17",
-      "companyId": "14"
+      "author": "Marcel Proust",
+      "title": "In Search of Lost Time",
+      "isbn": "0812969642",
+      "pages": 4211,
+      "countryId": 3,
+      "cityId": 11,
+      "companyId": 25,
+      "formatId": 2,
+      "description": "Twice amended to bring it to documentary decorum and the kind of textual completion Proust himself could never achieve.",
+      "price": 321
     },
     {
       "id": 3,
-      "author": "",
-      "isbn": "",
-      "title": ""
+      "author": "James Joyce",
+      "title": "Ulysses",
+      "isbn": "0679722769",
+      "pages": 783,
+      "countryId": 2,
+      "cityId": 10,
+      "companyId": 33,
+      "formatId": 3,
+      "description": "To my mind one of the most significant and beautiful books of our time.",
+      "price": 223.32
     },
     {
       "id": 4,
-      "author": "",
-      "isbn": "",
-      "title": ""
+      "author": "Homer",
+      "title": "The Odyssey",
+      "isbn": "0140268863",
+      "pages": 560,
+      "countryId": 2,
+      "cityId": 8,
+      "companyId": 14,
+      "formatId": 4,
+      "description": " The hardback is stitched and bound to keep, so it is worth your money.",
+      "price": 777
     },
     {
       "id": 5,
-      "author": "",
-      "isbn": "",
-      "title": ""
-    },
-    {
-      "id": 6,
-      "author": "wer",
-      "title": "ewr",
-      "isbn": "ewr",
-      "pages": "345",
-      "description": "rtert",
-      "price": "345",
+      "author": "George martin",
+      "title": "Ice and Fire",
+      "isbn": "434323",
+      "pages": "446",
+      "description": "Игра престолов",
+      "formatId": "2",
+      "price": "120",
       "countryId": "4",
       "cityId": "19",
-      "companyId": "20"
-    },
-    {
-      "author": "a1",
-      "title": "a1",
-      "isbn": "a1",
-      "pages": "234234",
-      "description": "234234",
-      "price": "234",
-      "countryId": "3",
-      "cityId": "18",
-      "companyId": "21",
-      "id": 7
-    },
-    {
-      "title": "йцу",
-      "isbn": "йцу",
-      "id": 8
-    },
-    {
-      "id": 9
-    },
-    {
-      "author": "уцк",
-      "id": 10
-    },
-    {
-      "id": 11,
-      "author": "werwer",
-      "title": "ewrewr",
-      "isbn": "ewrwer",
-      "pages": "435",
-      "description": "ertert",
-      "formatId": "2",
-      "price": "65465",
-      "countryId": "3",
-      "cityId": "17",
       "companyId": "16"
-    },
-    {
-      "id": 12,
-      "author": "eeeeeeee",
-      "title": "eeeee",
-      "isbn": "e",
-      "pages": "45",
-      "description": "retret",
-      "formatId": "3",
-      "price": "4353",
-      "countryId": "3",
-      "cityId": "18",
-      "companyId": "17"
-    },
-    {
-      "id": 13,
-      "author": "ewr",
-      "title": "werwre",
-      "isbn": "werwer",
-      "pages": "234",
-      "description": "we345r",
-      "formatId": "4",
-      "price": "345345",
-      "countryId": "2",
-      "cityId": "17",
-      "companyId": "17"
-    },
-    {
-      "author": "345345",
-      "title": "ertert",
-      "isbn": "retret",
-      "pages": "445654",
-      "description": "rtyrtyrty",
-      "price": "456456",
-      "countryId": "3",
-      "cityId": "16",
-      "companyId": "16",
-      "id": 14
-    },
-    {
-      "id": 15,
-      "author": "24",
-      "title": "retert",
-      "isbn": "35",
-      "pages": "345345",
-      "description": "retretret",
-      "formatId": "1",
-      "price": "345345",
-      "countryId": "3",
-      "cityId": "17",
-      "companyId": "18"
-    },
-    {
-      "id": 16,
-      "author": "lol",
-      "title": "qeqwe",
-      "isbn": "qweqwe",
-      "pages": "234234",
-      "description": "234234",
-      "formatId": "3",
-      "price": "23234",
-      "countryId": "3",
-      "cityId": "18",
-      "companyId": "19"
-    },
-    {
-      "id": 17,
-      "author": "lol",
-      "title": "qweqwe",
-      "isbn": "qweqwe",
-      "pages": "324234",
-      "description": "ewrwerewr",
-      "formatId": "3",
-      "price": "345",
-      "countryId": "3",
-      "cityId": "18",
-      "companyId": "15"
-    },
-    {
-      "rawParams": "",
-      "queryEncoder": {},
-      "paramsMap": {},
-      "id": 18
-    },
-    {
-      "rawParams": "",
-      "queryEncoder": {},
-      "paramsMap": {},
-      "id": 19
-    },
-    {
-      "rawParams": "",
-      "queryEncoder": {},
-      "paramsMap": {},
-      "id": 20
-    },
-    {
-      "rawParams": "",
-      "queryEncoder": {},
-      "paramsMap": {},
-      "id": 21
-    },
-    {
-      "rawParams": "",
-      "queryEncoder": {},
-      "paramsMap": {},
-      "id": 22
-    },
-    {
-      "search": {
-        "rawParams": "",
-        "queryEncoder": {},
-        "paramsMap": {}
-      },
-      "id": 23
-    },
-    {
-      "search": {
-        "rawParams": "",
-        "queryEncoder": {},
-        "paramsMap": {}
-      },
-      "id": 24
-    },
-    {
-      "search": {
-        "rawParams": "",
-        "queryEncoder": {},
-        "paramsMap": {}
-      },
-      "id": 25
-    },
-    {
-      "search": {
-        "rawParams": "",
-        "queryEncoder": {},
-        "paramsMap": {}
-      },
-      "id": 26
-    },
-    {
-      "search": {
-        "rawParams": "",
-        "queryEncoder": {},
-        "paramsMap": {}
-      },
-      "id": 27
-    },
-    {
-      "search": {
-        "rawParams": "",
-        "queryEncoder": {},
-        "paramsMap": {}
-      },
-      "id": 28
-    },
-    {
-      "search": {
-        "rawParams": "",
-        "queryEncoder": {},
-        "paramsMap": {}
-      },
-      "id": 29
     }
   ],
   "formats": [
