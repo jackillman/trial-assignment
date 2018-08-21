@@ -12,7 +12,9 @@ export class BookModel{
     price:number;
 
     _priceStart?:any;
-    _priceEnd?:any
+    _priceEnd?:any;
+    _pageStart?:any;
+    _pageEnd?:any;
 }
 
 export class FormatsModel {

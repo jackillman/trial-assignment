@@ -57,7 +57,7 @@ export class SearchComponent implements OnInit {
       }
     })
   }
-
+  arrPrice
   searching(){
     let myParams = new BookModel();
     if(this.authorSearch){
@@ -81,27 +81,45 @@ export class SearchComponent implements OnInit {
     if(this.maxPriceSearch){
       myParams._priceEnd= this.maxPriceSearch;
     }
-    // book.author = this.authorSearch;
-    // book.title = this.titleSearch;
-    // let query = { author: this.authorSearch, title: this.titleSearch } 
-    // console.log(query)
+    if(this.minPageSearch){
+      myParams._pageStart = this.minPageSearch;
+    }
+    if(this.maxPageSearch){
+      myParams._pageEnd= this.maxPageSearch;
+    }
+    let arrayBook = []
+    if(myParams._priceStart && myParams._priceEnd ){
+      this.booksFromSearching = []
+      this.httpWorkService.getBooks().subscribe(res=>{
+
+        let arr = [];
+        for(let i in res){
+          arr.push(res[i])
+        }
+        arrayBook = arr;
+        this.booksFromSearching = arr.filter(e=>{
+          console.log(e)
+          return  (e.price < myParams._priceEnd) && (e.price > myParams._priceStart)
+        })
+        console.log(this.booksFromSearching)
+      })
+
+
+
+    }
+
+
     console.log(myParams)
     this.router.navigate(['/search'], { queryParams: myParams});
 
-  //   this.querySubscription = this.route.queryParams.subscribe(
-  //     (queryParam: any) => {
-  //         this.auth = queryParam['author'];
-  //         this.title = queryParam['title'];
-  //     }
-  // );
       console.log(myParams)
 
         this.httpWorkService.searchingByParams(myParams).subscribe(res=>{
-          let arr = [];
+          let arr1 = [];
           for(let i in res){
-            arr.push(res[i])
+            arr1.push(res[i])
           }
-          this.booksFromSearching = arr
+          this.booksFromSearching = arr1
       console.log(res)
     })
   }
