@@ -35,4 +35,10 @@ export class ShowcaseComponent implements OnInit {
     );
   }
 
+  deleteBook(id){
+    this.httpWorkService.deleteBook(id).subscribe(res=>{
+      console.log(res)
+    })
+  }
+
 }

@@ -20,7 +20,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let book of books; let i = index" (click)="redirectToBook(book)">
+          <tr *ngFor="let book of books; let i = index" (click)="redirectToBook(book)" style="cursor:pointer">
             <th scope="row">{{book.id}}</th>
               <td>{{book.author}}</td>
               <td>{{book.title}}</td>

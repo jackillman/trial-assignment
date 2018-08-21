@@ -25,7 +25,9 @@ export class HttpWorkService {
       .set("x-auth-token",this.token)
       .set("Accept","*/*");
     
-    
+    deleteBook(id){
+        return this.http.delete<BookModel>(this.url__books + "/" + id, {headers:this.myHeaders})
+    }
     getBooks(){
         console.log(this.url__books)
         return this.http.get<BookModel>(this.url__books, {headers:this.myHeaders})

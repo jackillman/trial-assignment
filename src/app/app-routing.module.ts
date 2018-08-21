@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { SearchComponent } from './search/search.component';
 import { ShowcaseComponent } from './showcase/showcase.component';
 import { BookComponent } from './book/book.component';
-import { BookPageComponent } from './book-page/book-page.component';
 
 const routes: Routes = [
   { path: 'showcase', component: ShowcaseComponent },

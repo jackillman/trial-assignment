@@ -38,32 +38,6 @@
       "formatId": 3,
       "description": "To my mind one of the most significant and beautiful books of our time.",
       "price": 223.32
-    },
-    {
-      "id": 4,
-      "author": "Homer",
-      "title": "The Odyssey",
-      "isbn": "0140268863",
-      "pages": 560,
-      "countryId": 2,
-      "cityId": 8,
-      "companyId": 14,
-      "formatId": 4,
-      "description": " The hardback is stitched and bound to keep, so it is worth your money.",
-      "price": 777
-    },
-    {
-      "id": 5,
-      "author": "George martin",
-      "title": "Ice and Fire",
-      "isbn": "434323",
-      "pages": "446",
-      "description": "Игра престолов",
-      "formatId": "2",
-      "price": "120",
-      "countryId": "4",
-      "cityId": "19",
-      "companyId": "16"
     }
   ],
   "formats": [
