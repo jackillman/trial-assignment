@@ -21,6 +21,7 @@ export class BookComponent implements OnInit,OnDestroy {
   companiesFromDb = []
   citiesFromDb = []
   countriesFromDb = []
+  formatsFromDb = []
   isNewBook;
   lastID;
 
@@ -63,6 +64,15 @@ export class BookComponent implements OnInit,OnDestroy {
     
       }
     })
+
+    this.httpWorkService.getFormats().subscribe(res=>{
+      console.log(res)
+      for(let i in res){
+        this.formatsFromDb.push(res[i])
+    
+      }
+    })
+      
     this.currentBook = this.httpWorkService.getCurrentBook();
 
     console.log(this.currentBook)
@@ -72,15 +82,18 @@ export class BookComponent implements OnInit,OnDestroy {
      
     } else {
       this.cBook = new BookModel()
+      this.cBook.id = this.currentBook.id;
       this.cBook.author = this.currentBook.author;
       this.cBook.title = this.currentBook.title;
       this.cBook.isbn = this.currentBook.isbn;
       this.cBook.pages = this.currentBook.pages;
       this.cBook.description = this.currentBook.description;
+      this.cBook.formatId = this.currentBook.formatId;
       this.cBook.price = this.currentBook.price;
       this.cBook.countryId = this.currentBook.countryId;
       this.cBook.cityId = this.currentBook.cityId;
       this.cBook.companyId= this.currentBook.companyId;
+      console.log(this.cBook)
 
       this.isNewBook = this.httpWorkService.setReadBookMode()
     }
@@ -93,20 +106,7 @@ export class BookComponent implements OnInit,OnDestroy {
   }
 
   editedBook(){
-
-
-    let book = new BookModel();
-    console.log(this.currentBook)
-    book.id = this.currentBook.id;
-    book.author = this.curAuthor;
-    book.isbn = this.curIsbn
-    book.title = this.curTitle;
-    book.price = this.curPrice;
-    book.pages = this.curPages;
-    book.cityId = this.curCityId;
-    book.countryId = this.curCountryId;
-    book.description =this.curDescription;
-    this.httpWorkService.putEditBook(book).subscribe(res=>{
+    this.httpWorkService.putEditBook(this.cBook).subscribe(res=>{
       console.log(res)
       setTimeout(()=>{
         this.router.navigate(
@@ -119,7 +119,6 @@ export class BookComponent implements OnInit,OnDestroy {
 
 
   createNewBook(){
-    console.log(this.newBook)
         this.httpWorkService.postBook(this.newBook).subscribe(res=>{
       console.log(res)
 

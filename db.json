@@ -2,38 +2,28 @@
   "books": [
     {
       "id": 1,
-      "author": "Miguel De Cervantes1212",
-      "isbn": "0060934344",
-      "title": "Don Quixote",
-      "price": 129.32,
+      "author": "Miguel De Cervantes1212121212",
+      "title": "Don Quixote1",
+      "isbn": "00609343441",
       "pages": 992,
-      "cityId": 5,
+      "description": "This is a great book!",
+      "price": 129.32,
       "countryId": 1,
-      "description": "This is a great book!"
+      "cityId": 5,
+      "companyId": "20",
+      "formatId": "2"
     },
     {
       "id": 2,
-      "author": "Marcel Proust11111",
-      "isbn": "08129696421212",
-      "title": "In Search of Lost Time",
-      "price": 321,
-      "pages": 4211,
-      "cityId": 11,
-      "countryId": 3,
-      "description": "Twice amended to bring it to documentary decorum and the kind of textual completion Proust himself could never achieve."
+      "author": "",
+      "isbn": "",
+      "title": ""
     },
     {
       "id": 3,
-      "author": "James Joyce",
-      "title": "Ulysses",
-      "isbn": "0679722769",
-      "pages": 783,
-      "countryId": 2,
-      "cityId": 10,
-      "companyId": 33,
-      "formatId": 3,
-      "description": "To my mind one of the most significant and beautiful books of our time.",
-      "price": 223.32
+      "author": "",
+      "isbn": "",
+      "title": ""
     },
     {
       "id": 4,
@@ -43,10 +33,12 @@
     },
     {
       "id": 5,
-      "author": "dfdfgdf",
-      "title": "dfgdfdddddddddddd"
+      "author": "",
+      "isbn": "",
+      "title": ""
     },
     {
+      "id": 6,
       "author": "wer",
       "title": "ewr",
       "isbn": "ewr",
@@ -55,8 +47,7 @@
       "price": "345",
       "countryId": "4",
       "cityId": "19",
-      "companyId": "17",
-      "id": 6
+      "companyId": "20"
     },
     {
       "author": "a1",
@@ -123,6 +114,45 @@
       "cityId": "16",
       "companyId": "16",
       "id": 14
+    },
+    {
+      "id": 15,
+      "author": "24",
+      "title": "retert",
+      "isbn": "35",
+      "pages": "345345",
+      "description": "retretret",
+      "formatId": "1",
+      "price": "345345",
+      "countryId": "3",
+      "cityId": "17",
+      "companyId": "18"
+    },
+    {
+      "id": 16,
+      "author": "1212",
+      "title": "qeqwe",
+      "isbn": "qweqwe",
+      "pages": "234234",
+      "description": "234234",
+      "formatId": "3",
+      "price": "23234",
+      "countryId": "3",
+      "cityId": "18",
+      "companyId": "19"
+    },
+    {
+      "author": "qweqwe",
+      "title": "qweqwe",
+      "isbn": "qweqwe",
+      "pages": "324234",
+      "formatId": "3",
+      "description": "ewrwerewr",
+      "price": "345",
+      "countryId": "3",
+      "companyId": "15",
+      "cityId": "18",
+      "id": 17
     }
   ],
   "formats": [
