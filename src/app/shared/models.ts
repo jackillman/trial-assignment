@@ -11,10 +11,10 @@ export class BookModel{
     description:string;
     price:number;
 
-    _priceStart?:any;
-    _priceEnd?:any;
-    _pageStart?:any;
-    _pageEnd?:any;
+    price_lte?:any;
+    price_gte?:any;
+    pages_lte?:any;
+    pages_gte?:any;
 }
 
 export class FormatsModel {

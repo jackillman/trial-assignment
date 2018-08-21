@@ -50,9 +50,12 @@
 
               <label for="page-min" class="col-sm-6 col-form-label">Pages between</label>
               <div class="col-sm-6">
-                <input class="form-control" id="page-min" name="min-page" [(ngModel)]="minPageSearch">
+                <input class="form-control" id="page-min" name="min-page" [(ngModel)]="minPageSearch" pattern="[0-9]{1,11}" #minpages="ngModel" > 
+                <div [hidden]="minpages.valid || minpages.untouched" class="alert alert-danger">
+                    Не валидное поле
+                  </div>
               </div>
-
+    
             </div>
           </div>
 
@@ -61,7 +64,10 @@
 
               <label  class="col-sm-2 col-form-label text-center" for="page-max">and</label>
               <div class="col-sm-6">
-                <input class="form-control" id="page-max" name="max-page" [(ngModel)]="maxPageSearch">
+                <input class="form-control" id="page-max" name="max-page" [(ngModel)]="maxPageSearch" pattern="[0-9]{1,11}" #maxpages="ngModel">
+                <div [hidden]="maxpages.valid || maxpages.untouched" class="alert alert-danger">
+                    Не валидное поле
+                  </div>
               </div>
 
             </div>
@@ -76,7 +82,10 @@
 
               <label for="price-min" class="col-sm-6 col-form-label">Price between</label>
               <div class="col-sm-6">
-                <input class="form-control" id="price-min" name="min-price" [(ngModel)]="minPriceSearch">
+                <input class="form-control" id="price-min" name="min-price" [(ngModel)]="minPriceSearch" pattern="[0-9]{1,5}" #minprices="ngModel">
+                <div [hidden]="minprices.valid || minprices.untouched" class="alert alert-danger">
+                    Не валидное поле
+                  </div>
               </div>
 
             </div>
@@ -87,14 +96,18 @@
 
               <label  class="col-sm-2 col-form-label text-center" for="price-max">and</label>
               <div class="col-sm-6">
-                <input class="form-control" id="price-max" name="max-price" [(ngModel)]="maxPriceSearch">
+                <input class="form-control" id="price-max" name="max-price" [(ngModel)]="maxPriceSearch" pattern="[0-9]{1,5}" #maxprices="ngModel">
+
+                <div [hidden]="maxprices.valid || maxprices.untouched" class="alert alert-danger">
+                    Не валидное поле
+                  </div>
               </div>
 
             </div>
           </div>
 
         </div>
-        <button (click)="searching()">searching</button>
+        <button (click)="searching()" class="btn btn-primary mt-4" [disabled]="minpages.invalid || maxpages.invalid || minprices.invalid ||maxprices.invalid ">searching</button>
         
       </form>
     </div>
@@ -119,7 +132,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let book of booksFromSearching; let i = index" (click)="redirectToBook(book)">
+                <tr *ngFor="let book of booksFromSearching; let i = index" >
                   <th scope="row">{{book.id}}</th>
                     <td>{{book.author}}</td>
                     <td>{{book.title}}</td>

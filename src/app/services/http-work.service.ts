@@ -68,7 +68,7 @@ export class HttpWorkService {
     nullBook(){
         this.currentBook = null
     }
-    
+
     getCurrentBook(){
         return this.currentBook;
     }
@@ -84,6 +84,7 @@ export class HttpWorkService {
     searchingByParams(bookSearch){
       
         let body = this.convert(bookSearch)
+        console.log(body)
         let url = this.url__books + body
         console.log(url)
         return this.http.get<BookModel>(url , {headers:this.myHeaders })

@@ -57,7 +57,7 @@ export class SearchComponent implements OnInit {
       }
     })
   }
-  arrPrice
+  
   searching(){
     let myParams = new BookModel();
     if(this.authorSearch){
@@ -76,37 +76,37 @@ export class SearchComponent implements OnInit {
       myParams.formatId = this.formatIdSearch;
     }  
     if(this.minPriceSearch){
-      myParams._priceStart = this.minPriceSearch;
+      myParams.price_gte = this.minPriceSearch;
     }
     if(this.maxPriceSearch){
-      myParams._priceEnd= this.maxPriceSearch;
+      myParams.price_lte= this.maxPriceSearch;
     }
     if(this.minPageSearch){
-      myParams._pageStart = this.minPageSearch;
+      myParams.pages_gte = this.minPageSearch;
     }
     if(this.maxPageSearch){
-      myParams._pageEnd= this.maxPageSearch;
+      myParams.pages_lte= this.maxPageSearch;
     }
-    let arrayBook = []
-    if(myParams._priceStart && myParams._priceEnd ){
-      this.booksFromSearching = []
-      this.httpWorkService.getBooks().subscribe(res=>{
+    // let arrayBook = []
+    // if(myParams._priceStart && myParams._priceEnd ){
+    //   this.booksFromSearching = []
+    //   this.httpWorkService.getBooks().subscribe(res=>{
 
-        let arr = [];
-        for(let i in res){
-          arr.push(res[i])
-        }
-        arrayBook = arr;
-        this.booksFromSearching = arr.filter(e=>{
-          console.log(e)
-          return  (e.price < myParams._priceEnd) && (e.price > myParams._priceStart)
-        })
-        console.log(this.booksFromSearching)
-      })
+    //     let arr = [];
+    //     for(let i in res){
+    //       arr.push(res[i])
+    //     }
+    //     arrayBook = arr;
+    //     this.booksFromSearching = arr.filter(e=>{
+    //       console.log(e)
+    //       return  (e.price < myParams._priceEnd) && (e.price > myParams._priceStart)
+    //     })
+    //     console.log(this.booksFromSearching)
+    //   })
 
 
 
-    }
+    // }
 
 
     console.log(myParams)
