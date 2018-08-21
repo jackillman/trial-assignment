@@ -15,9 +15,16 @@
     },
     {
       "id": 2,
-      "author": "",
-      "isbn": "",
-      "title": ""
+      "author": "ввв",
+      "title": "ааа",
+      "isbn": "435",
+      "pages": "3",
+      "description": "куекуе",
+      "formatId": "2",
+      "price": "345345",
+      "countryId": "3",
+      "cityId": "17",
+      "companyId": "14"
     },
     {
       "id": 3,
