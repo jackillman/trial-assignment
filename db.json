@@ -37,19 +37,92 @@
     },
     {
       "id": 4,
-      "author": "111",
-      "isbn": "fdgdfg",
-      "title": "dfg",
-      "price": "dfg",
-      "pages": "dfgdfg",
-      "cityId": "17",
-      "countryId": "3",
-      "description": "dfg"
+      "author": "",
+      "isbn": "",
+      "title": ""
     },
     {
       "id": 5,
       "author": "dfdfgdf",
       "title": "dfgdfdddddddddddd"
+    },
+    {
+      "author": "wer",
+      "title": "ewr",
+      "isbn": "ewr",
+      "pages": "345",
+      "description": "rtert",
+      "price": "345",
+      "countryId": "4",
+      "cityId": "19",
+      "companyId": "17",
+      "id": 6
+    },
+    {
+      "author": "a1",
+      "title": "a1",
+      "isbn": "a1",
+      "pages": "234234",
+      "description": "234234",
+      "price": "234",
+      "countryId": "3",
+      "cityId": "18",
+      "companyId": "21",
+      "id": 7
+    },
+    {
+      "title": "йцу",
+      "isbn": "йцу",
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "author": "уцк",
+      "id": 10
+    },
+    {
+      "author": "werwer",
+      "title": "ewrewr",
+      "isbn": "ewrwer",
+      "pages": "435",
+      "description": "ertert",
+      "price": "65465",
+      "countryId": "3",
+      "cityId": "17",
+      "companyId": "16",
+      "id": 11
+    },
+    {
+      "id": 12,
+      "author": "",
+      "isbn": "",
+      "title": ""
+    },
+    {
+      "author": "ewr",
+      "title": "werwre",
+      "isbn": "werwer",
+      "pages": "234",
+      "description": "we345r",
+      "countryId": "2",
+      "cityId": "17",
+      "companyId": "17",
+      "price": "345345",
+      "id": 13
+    },
+    {
+      "author": "345345",
+      "title": "ertert",
+      "isbn": "retret",
+      "pages": "445654",
+      "description": "rtyrtyrty",
+      "price": "456456",
+      "countryId": "3",
+      "cityId": "16",
+      "companyId": "16",
+      "id": 14
     }
   ],
   "formats": [

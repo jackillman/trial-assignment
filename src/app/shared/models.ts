@@ -6,7 +6,7 @@ export class BookModel{
     pages:number;
     countryId:number;
     cityId:number;
-    companyId:number;
+    companyId:any;
     formatId:number;
     description:string;
     price:number;

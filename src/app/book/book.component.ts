@@ -2,6 +2,7 @@ import { Component, OnInit, SimpleChanges, OnChanges, OnDestroy } from '@angular
 import { HttpWorkService } from '../services/http-work.service';
 import { BookModel } from '../shared/models';
 import { NgForm} from '@angular/forms';
+import { Router } from '../../../node_modules/@angular/router';
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html'
@@ -21,21 +22,14 @@ export class BookComponent implements OnInit,OnDestroy {
   citiesFromDb = []
   countriesFromDb = []
   isNewBook;
-  newAuthor="";
-  newTitle ="";
-  newIsbn;
-  newPages;
-  newDescription;
-  newPrice;
-  newCityId;
-  newCompanyId;
-  newCountryId
-  lastID
-  constructor(private httpWorkService:HttpWorkService) { 
+  lastID;
+
+  newBook;
+  constructor(private httpWorkService:HttpWorkService, private router:Router) { 
     this.isNewBook = this.httpWorkService.setNewBookMode()
   }
   currentBook:BookModel;
-
+  cBook
   ngOnInit() {
     this.httpWorkService.getBooks().subscribe(res=>{
       let arr = []
@@ -73,17 +67,20 @@ export class BookComponent implements OnInit,OnDestroy {
 
     console.log(this.currentBook)
     if(!this.currentBook){
-      this.isNewBook = this.httpWorkService.setNewBookMode()
+      this.isNewBook = this.httpWorkService.setNewBookMode();
+      this.newBook = new BookModel();
+     
     } else {
-      this.curAuthor = this.currentBook.author;
-      this.curTitle = this.currentBook.title;
-      this.curIsbn = this.currentBook.isbn;
-      this.curPages = this.currentBook.pages;
-      this.curDescription = this.currentBook.description;
-      this.curPrice = this.currentBook.price;
-      this.curCountryId = this.currentBook.countryId;
-      this.curCityId = this.currentBook.cityId;
-      this.curCompanyId= this.currentBook.companyId;
+      this.cBook = new BookModel()
+      this.cBook.author = this.currentBook.author;
+      this.cBook.title = this.currentBook.title;
+      this.cBook.isbn = this.currentBook.isbn;
+      this.cBook.pages = this.currentBook.pages;
+      this.cBook.description = this.currentBook.description;
+      this.cBook.price = this.currentBook.price;
+      this.cBook.countryId = this.currentBook.countryId;
+      this.cBook.cityId = this.currentBook.cityId;
+      this.cBook.companyId= this.currentBook.companyId;
 
       this.isNewBook = this.httpWorkService.setReadBookMode()
     }
@@ -111,26 +108,28 @@ export class BookComponent implements OnInit,OnDestroy {
     book.description =this.curDescription;
     this.httpWorkService.putEditBook(book).subscribe(res=>{
       console.log(res)
+      setTimeout(()=>{
+        this.router.navigate(
+          ['/showcase']
+        );
+      },2000)
+
     })
   }
+
 
   createNewBook(){
-    let book = new BookModel();
-    console.log(this.currentBook)
-    book.id = this.lastID;
-    book.author = this.newAuthor;
-    book.isbn = this.newIsbn
-    book.title = this.newTitle;
-    book.price = this.newPrice;
-    book.pages = this.newPages;
-    book.cityId = this.newCityId;
-    book.countryId = this.newCountryId;
-    book.description =this.newDescription;
-    console.log(book)
-    this.httpWorkService.postBook(book).subscribe(res=>{
+    console.log(this.newBook)
+        this.httpWorkService.postBook(this.newBook).subscribe(res=>{
       console.log(res)
+
+      setTimeout(()=>{
+        this.router.navigate(
+          ['/showcase']
+        );
+      },2000)
+    },err=>{
+      console.log(err)
     })
   }
-
-
 }

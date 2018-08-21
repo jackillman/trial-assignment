@@ -2,80 +2,106 @@
 
  
 
-    <h3 class="mb-4">Book Info</h3>
+  <h3 class="mb-4">Book Info</h3>
 
-    <div class="form-group">
-      <label for="newAuthor">Author</label>
-      <input class="form-control" id="newAuthor"   [(ngModel)]="newAuthor">
-    </div>
+  <div class="form-group">
+    <label for="newAuthor">Author</label>
+    <input class="form-control" id="newAuthor"   [(ngModel)]="newBook.author" #author="ngModel" required >
+  </div>
 
-    <div class="form-group">
-      <label for="title">Title</label>
-      <input class="form-control" id="title" [(ngModel)]="newTitle">
-    </div>
+  <div [hidden]="author.valid || author.untouched" class="alert alert-danger">
+    Не заполненное поле
+  </div>
 
-    <div class="form-group">
-      <label for="isbn">ISBN</label>
-      <input class="form-control" id="isbn" [(ngModel)]="newIsbn">
-    </div>
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input class="form-control" id="title" [(ngModel)]="newBook.title" #title="ngModel" required>
+  </div>
+  <div [hidden]="title.valid || title.untouched" class="alert alert-danger">
+    Не заполненное поле
+  </div>
 
-    <div class="form-group">
-      <label for="pages">Number of Pages</label>
-      <input class="form-control" id="pages" [(ngModel)]="newPages">
-    </div>
+  <div class="form-group">
+    <label for="isbn">ISBN</label>
+    <input class="form-control" id="isbn" [(ngModel)]="newBook.isbn" #isbn="ngModel" required>
+  </div>
+  <div [hidden]="isbn.valid || isbn.untouched" class="alert alert-danger">
+    Не валидное поле
+  </div>
 
-    <div class="form-group">
-      <label for="format">Format</label>
-      <select class="form-control" id="format">
-        <option>Paperback</option>
-        <option>Hardcover</option>
-        <option>Audiobook</option>
-        <option>Leather Bound</option>
-        <option>Spiral Bound</option>
-      </select>
-    </div>
+  <div class="form-group">
+    <label for="pages">Number of Pages</label>
+    <input class="form-control" id="pages" [(ngModel)]="newBook.pages" #pages="ngModel" required pattern="[0-9]{1,6}"/>
+  </div>
+  <div [hidden]="pages.valid || pages.untouched" class="alert alert-danger">
+    Не валидное поле
+  </div>
 
-    <div class="form-group">
-      <label for="description">Description</label>
-      <textarea class="form-control" id="description" rows="3" [(ngModel)]="newDescription"></textarea>
-    </div>
+  <div class="form-group">
+    <label for="format">Format</label>
+    <select class="form-control" id="format">
+      <option>Paperback</option>
+      <option>Hardcover</option>
+      <option>Audiobook</option>
+      <option>Leather Bound</option>
+      <option>Spiral Bound</option>
+    </select>
+  </div>
 
-    <div class="form-group">
-      <label for="price">Price</label>
-      <input class="form-control" id="price" [(ngModel)]="newPrice">
-    </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea class="form-control" id="description" rows="3" [(ngModel)]="newBook.description" #description="ngModel" required></textarea>
+  </div>
+  <div [hidden]="description.valid || description.untouched" class="alert alert-danger">
+    Не валидное поле
+  </div>
 
-    <hr class="m-1 mb-5 mt-5">
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input class="form-control" id="price" [(ngModel)]="newBook.price" #price="ngModel" required pattern="[0-9]{1,6}" >
+  </div>
+  <div [hidden]="price.valid || price.untouched" class="alert alert-danger">
+    Не валидное поле
+  </div>
 
-    <h3 class="mb-4">Publisher Info</h3>
+  <hr class="m-1 mb-5 mt-5">
 
-    <div class="form-group">
-      <label for="country">Country</label>
-      <select class="form-control" id="country"  name="countryId" [(ngModel)]="newCountryId">
-          <option *ngFor="let country of countriesFromDb" [value]="country.id" >{{country.id}}</option>
-      </select>
-    </div>
+  <h3 class="mb-4">Publisher Info</h3>
 
-    <div class="form-group">
-      <label for="city">City</label>
-      <select class="form-control" id="city"  name="cityId" [(ngModel)]="newCityId">
-          <option *ngFor="let city of citiesFromDb" [value]="city.id">{{city.id}}</option>
-      </select>
-    </div>
+  <div class="form-group">
+    <label for="country">Country</label>
+    <select class="form-control" id="country"  name="countryId" [(ngModel)]="newBook.countryId" #countryId="ngModel" required pattern="[0-9]{1,6}">
+        <option *ngFor="let country of countriesFromDb" [value]="country.id" >{{country.id}}</option>
+    </select>
+  </div>
+  <div [hidden]="countryId.valid || countryId.untouched" class="alert alert-danger">
+    Не валидное поле
+  </div>
+  <div class="form-group">
+    <label for="city">City</label>
+    <select class="form-control" id="city"  name="cityId" [(ngModel)]="newBook.cityId" #cityId="ngModel" required>
+        <option *ngFor="let city of citiesFromDb" [value]="city.id">{{city.id}}</option>
+    </select>
+  </div>
+  <div [hidden]="cityId.valid || cityId.untouched" class="alert alert-danger">
+    Не валидное поле
+  </div>
+  <div class="form-group">
+    <label for="company">Company</label>
+   
+    <select class="form-control" id="companys"  name="сompanyId"  [(ngModel)]="newBook.companyId" #companyId="ngModel" required>
+        <option *ngFor="let company of companiesFromDb" [value]="company.id" >{{company.id}}</option>
+    </select>
+  </div>  
+  <div [hidden]="companyId.valid || companyId.untouched" class="alert alert-danger">
+    Не валидное поле
+  </div>
+  <button type="submit" class="btn btn-primary mt-4" (click)="createNewBook()" [disabled]="author.invalid || title.invalid || isbn.invalid || pages.invalid || description.invalid || price.invalid || countryId.invalid || cityId.invalid || companyId.invalid" >Submit</button>
 
-    <div class="form-group">
-      <label for="company">Company</label>
-      <!-- {{companiesFromDb | json}} -->
-     
-      <select class="form-control" id="company"  name="сompanyId"  [(ngModel)]="newCompanyId">
-          <option *ngFor="let company of companiesFromDb" [value]="company.id" >{{company.id}}</option>
-      </select>
-    </div>
 
-    <button type="submit" class="btn btn-primary mt-4" (click)="createNewBook()">Submit</button>
-
-  
 </div>
+
+
 
 <div class="book form-wrapper" *ngIf="!isNewBook">
 
@@ -85,24 +111,33 @@
 
     <div class="form-group">
       <label for="author">Author</label>
-      <input class="form-control" id="author" name="author" [(ngModel)]="curAuthor">
+      <input class="form-control" id="author" name="author"  [(ngModel)]="cBook.author" #author="ngModel" required>
     </div>
-
+    <div [hidden]="author.valid || author.untouched" class="alert alert-danger">
+      Не заполненное поле
+    </div>
     <div class="form-group">
       <label for="title">Title</label>
-      <input class="form-control" id="title" name="title" [(ngModel)]="curTitle">
+      <input class="form-control" id="title" name="title"  [(ngModel)]="cBook.title" #title="ngModel" required >
     </div>
-
+    <div [hidden]="title.valid || title.untouched" class="alert alert-danger">
+      Не заполненное поле
+    </div>
     <div class="form-group">
       <label for="isbn">ISBN</label>
-      <input class="form-control" id="isbn"  name="isbn" [(ngModel)]="curIsbn">
+      <input class="form-control" id="isbn"  name="isbn"  [(ngModel)]="cBook.isbn" #isbn="ngModel" required>
+    </div>
+    <div [hidden]="isbn.valid || isbn.untouched" class="alert alert-danger">
+      Не заполненное поле
     </div>
 
     <div class="form-group">
       <label for="pages">Number of Pages</label>
-      <input class="form-control" id="pages" name="pages" [(ngModel)]="curPages">
+      <input class="form-control" id="pages" name="pages" [(ngModel)]="cBook.pages" #pages="ngModel" required pattern="[0-9]{1,6}">
     </div>
-
+    <div [hidden]="pages.valid || pages.untouched" class="alert alert-danger">
+      Не валидное поле
+    </div>
     <div class="form-group">
       <label for="format">Format</label>
       <select class="form-control" id="format" >
@@ -116,41 +151,53 @@
 
     <div class="form-group">
       <label for="description">Description</label>
-      <textarea class="form-control" id="description" rows="3" name="description" [(ngModel)]="curDescription"></textarea>
+      <textarea class="form-control" id="description" rows="3" name="description" [(ngModel)]="cBook.description" #description="ngModel" required>></textarea>
     </div>
-
+    <div [hidden]="description.valid || description.untouched" class="alert alert-danger">
+      Не валидное поле
+    </div>
     <div class="form-group">
       <label for="price">Price</label>
-      <input class="form-control" id="price" name="price" [(ngModel)]="curPrice">
+      <input class="form-control" id="price" name="price" [(ngModel)]="cBook.price" #price="ngModel" required pattern="[0-9]{1,6}" >
     </div>
-
+    <div [hidden]="price.valid || price.untouched" class="alert alert-danger">
+      Не валидное поле
+    </div>
     <hr class="m-1 mb-5 mt-5">
 
     <h3 class="mb-4">Publisher Info</h3>
 
     <div class="form-group">
       <label for="country">Country</label>
-      <select class="form-control" id="country"  name="countryId" [(ngModel)]="curCountryId">
+      <select class="form-control" id="country"  name="countryId" [(ngModel)]="cBook.countryId" #countryId="ngModel" required pattern="[0-9]{1,6}">
           <option *ngFor="let country of countriesFromDb" [value]="country.id" [selected]="country.id == curCountryId">{{country.id}}</option>
       </select>
     </div>
+    <div [hidden]="countryId.valid || countryId.untouched" class="alert alert-danger">
+      Не валидное поле
+    </div>
+
 
     <div class="form-group">
       <label for="city">City</label>
-      <select class="form-control" id="city"  name="cityId" [(ngModel)]="curCityId">
+      <select class="form-control" id="city"  name="cityId" [(ngModel)]="cBook.cityId" #cityId="ngModel">
           <option *ngFor="let city of citiesFromDb" [value]="city.id" [selected]="city.id == curCityId">{{city.id}}</option>
       </select>
+    </div>
+    <div [hidden]="cityId.valid || cityId.untouched" class="alert alert-danger">
+      Не валидное поле
     </div>
 
     <div class="form-group">
       <label for="company">Company</label>
-      <select class="form-control" id="company" name="companyId" [(ngModel)]='curCompanyId'>
+      <select class="form-control" id="company" name="companyId" [(ngModel)]="cBook.companyId" #companyId="ngModel" required>
         <option *ngFor="let company of companiesFromDb" [value]="company.id" [selected]="company.id == curCompanyId">{{company.id}} - {{company.name}}</option>
       </select>
     </div>
-
-    <button type="submit" class="btn btn-primary mt-4"  (click)="editedBook()">Submit</button>
+    <div [hidden]="companyId.valid || companyId.untouched" class="alert alert-danger">
+      Не валидное поле
+    </div>
+    <button type="submit" class="btn btn-primary mt-4"  (click)="editedBook()"  [disabled]="author.invalid || title.invalid || isbn.invalid || pages.invalid || description.invalid || price.invalid || countryId.invalid || cityId.invalid || companyId.invalid">Submit</button>
 
   </form>
 </div>
-
