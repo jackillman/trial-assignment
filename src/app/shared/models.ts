@@ -10,6 +10,9 @@ export class BookModel{
     formatId:number;
     description:string;
     price:number;
+
+    _priceStart?:any;
+    _priceEnd?:any
 }
 
 export class FormatsModel {

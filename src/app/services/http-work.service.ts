@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { URLSearchParams} from '@angular/http';
 import { BookModel, FormatsModel, CitiesModel } from '../shared/models';
 
 
@@ -12,7 +13,7 @@ export class HttpWorkService {
   token = "bad18eba1ff45jk7858b8ae88a77fa30";
   currentBook;
   isNewBook = true
-  url__books = "http://localhost:3004/books/";
+  url__books = "http://localhost:3004/books";
   url__formats = "http://localhost:3004/formats";
   url__countries = "http://localhost:3004/countries";
   url__cities = "http://localhost:3004/cities";
@@ -50,7 +51,7 @@ export class HttpWorkService {
     putEditBook(book){
         let body =JSON.stringify(book)
         console.log(body)
-        return this.http.put<CitiesModel>(this.url__books + book.id , body, {headers:this.myHeaders})
+        return this.http.put<CitiesModel>(this.url__books +"/"+ book.id , body, {headers:this.myHeaders})
     }
 
    postBook(book){
@@ -58,25 +59,41 @@ export class HttpWorkService {
         console.log(body)
         return this.http.post<CitiesModel>(this.url__books , body, {headers:this.myHeaders})
     }
+
     writeCurrentBook(book){
         this.currentBook = book;
         console.log(this.currentBook)
     }
+
     nullBook(){
         this.currentBook = null
     }
+    
     getCurrentBook(){
-        console.log(this.currentBook)
         return this.currentBook;
     }
 
     setNewBookMode(){
-       
         return true
-        
     }
+
     setReadBookMode(){
-       
         return false;
+    }
+
+    searchingByParams(bookSearch){
+      
+        let body = this.convert(bookSearch)
+        let url = this.url__books + body
+        console.log(url)
+        return this.http.get<BookModel>(url , {headers:this.myHeaders })
+    }
+
+
+
+    convert(a){
+        if( typeof(a) !== 'object' ) 
+            return '';
+        return `?${Object.keys(a).map(k=>`${k}=${a[k]}`).join('&')}`;
     }
 }

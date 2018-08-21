@@ -74,34 +74,43 @@
       "id": 10
     },
     {
+      "id": 11,
       "author": "werwer",
       "title": "ewrewr",
       "isbn": "ewrwer",
       "pages": "435",
       "description": "ertert",
+      "formatId": "2",
       "price": "65465",
       "countryId": "3",
       "cityId": "17",
-      "companyId": "16",
-      "id": 11
+      "companyId": "16"
     },
     {
       "id": 12,
-      "author": "",
-      "isbn": "",
-      "title": ""
+      "author": "eeeeeeee",
+      "title": "eeeee",
+      "isbn": "e",
+      "pages": "45",
+      "description": "retret",
+      "formatId": "3",
+      "price": "4353",
+      "countryId": "3",
+      "cityId": "18",
+      "companyId": "17"
     },
     {
+      "id": 13,
       "author": "ewr",
       "title": "werwre",
       "isbn": "werwer",
       "pages": "234",
       "description": "we345r",
+      "formatId": "4",
+      "price": "345345",
       "countryId": "2",
       "cityId": "17",
-      "companyId": "17",
-      "price": "345345",
-      "id": 13
+      "companyId": "17"
     },
     {
       "author": "345345",
@@ -130,7 +139,7 @@
     },
     {
       "id": 16,
-      "author": "1212",
+      "author": "lol",
       "title": "qeqwe",
       "isbn": "qweqwe",
       "pages": "234234",
@@ -142,17 +151,103 @@
       "companyId": "19"
     },
     {
-      "author": "qweqwe",
+      "id": 17,
+      "author": "lol",
       "title": "qweqwe",
       "isbn": "qweqwe",
       "pages": "324234",
-      "formatId": "3",
       "description": "ewrwerewr",
+      "formatId": "3",
       "price": "345",
       "countryId": "3",
-      "companyId": "15",
       "cityId": "18",
-      "id": 17
+      "companyId": "15"
+    },
+    {
+      "rawParams": "",
+      "queryEncoder": {},
+      "paramsMap": {},
+      "id": 18
+    },
+    {
+      "rawParams": "",
+      "queryEncoder": {},
+      "paramsMap": {},
+      "id": 19
+    },
+    {
+      "rawParams": "",
+      "queryEncoder": {},
+      "paramsMap": {},
+      "id": 20
+    },
+    {
+      "rawParams": "",
+      "queryEncoder": {},
+      "paramsMap": {},
+      "id": 21
+    },
+    {
+      "rawParams": "",
+      "queryEncoder": {},
+      "paramsMap": {},
+      "id": 22
+    },
+    {
+      "search": {
+        "rawParams": "",
+        "queryEncoder": {},
+        "paramsMap": {}
+      },
+      "id": 23
+    },
+    {
+      "search": {
+        "rawParams": "",
+        "queryEncoder": {},
+        "paramsMap": {}
+      },
+      "id": 24
+    },
+    {
+      "search": {
+        "rawParams": "",
+        "queryEncoder": {},
+        "paramsMap": {}
+      },
+      "id": 25
+    },
+    {
+      "search": {
+        "rawParams": "",
+        "queryEncoder": {},
+        "paramsMap": {}
+      },
+      "id": 26
+    },
+    {
+      "search": {
+        "rawParams": "",
+        "queryEncoder": {},
+        "paramsMap": {}
+      },
+      "id": 27
+    },
+    {
+      "search": {
+        "rawParams": "",
+        "queryEncoder": {},
+        "paramsMap": {}
+      },
+      "id": 28
+    },
+    {
+      "search": {
+        "rawParams": "",
+        "queryEncoder": {},
+        "paramsMap": {}
+      },
+      "id": 29
     }
   ],
   "formats": [

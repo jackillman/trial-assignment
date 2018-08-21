@@ -38,11 +38,11 @@ export class BookComponent implements OnInit,OnDestroy {
         arr.push(res[i])
       }
       this.lastID = arr.length+1
-      console.log(this.lastID)
+     
       
     })
     this.httpWorkService.getCountries().subscribe(res=>{
-      console.log(res)
+      
       for(let i in res){
         this.countriesFromDb.push(res[i])
     
@@ -50,7 +50,7 @@ export class BookComponent implements OnInit,OnDestroy {
     })
 
     this.httpWorkService.getCities().subscribe(res=>{
-      console.log(res)
+   
       for(let i in res){
         this.citiesFromDb.push(res[i])
     
@@ -58,7 +58,7 @@ export class BookComponent implements OnInit,OnDestroy {
     })
 
     this.httpWorkService.getCompanies().subscribe(res=>{
-      console.log(res)
+     
       for(let i in res){
         this.companiesFromDb.push(res[i])
     
@@ -66,7 +66,7 @@ export class BookComponent implements OnInit,OnDestroy {
     })
 
     this.httpWorkService.getFormats().subscribe(res=>{
-      console.log(res)
+     
       for(let i in res){
         this.formatsFromDb.push(res[i])
     
@@ -75,7 +75,7 @@ export class BookComponent implements OnInit,OnDestroy {
       
     this.currentBook = this.httpWorkService.getCurrentBook();
 
-    console.log(this.currentBook)
+    
     if(!this.currentBook){
       this.isNewBook = this.httpWorkService.setNewBookMode();
       this.newBook = new BookModel();
@@ -93,7 +93,6 @@ export class BookComponent implements OnInit,OnDestroy {
       this.cBook.countryId = this.currentBook.countryId;
       this.cBook.cityId = this.currentBook.cityId;
       this.cBook.companyId= this.currentBook.companyId;
-      console.log(this.cBook)
 
       this.isNewBook = this.httpWorkService.setReadBookMode()
     }
