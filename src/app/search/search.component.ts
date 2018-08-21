@@ -43,7 +43,7 @@ export class SearchComponent implements OnInit {
             this.minPageSearch = queryParam['pages_gte'];
             this.maxPageSearch = queryParam['pages_lte'];
            console.log(queryParam)
-           if(this.authorSearch || this.titleSearch || this.isbnSearch || this.formatIdSearch || (this.minPriceSearch && this.maxPriceSearch) || (this.minPageSearch  || this.maxPageSearch)){
+           if(this.authorSearch || this.titleSearch || this.isbnSearch || this.formatIdSearch || (this.minPriceSearch && this.maxPriceSearch) || (this.minPageSearch  && this.maxPageSearch)){
             this.searching()
            }
            
