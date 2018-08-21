@@ -35,9 +35,13 @@ export class ShowcaseComponent implements OnInit {
     );
   }
 
-  deleteBook(id){
-    this.httpWorkService.deleteBook(id).subscribe(res=>{
+  deleteBook(book){
+    this.httpWorkService.deleteBook(book.id).subscribe(res=>{
       console.log(res)
+      let ind = this.books.indexOf(book);
+      if(ind > -1){
+        this.books.splice(ind,1);
+      }
     })
   }
 

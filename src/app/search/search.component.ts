@@ -27,8 +27,7 @@ export class SearchComponent implements OnInit {
   minPriceSearch;
   maxPriceSearch;
   formatsFromDb = []
-  auth;
-  title;
+
   
   booksFromSearching:BookModel[] =[]
   constructor(private httpWorkService:HttpWorkService,private route: ActivatedRoute,private router:Router) { 
@@ -39,8 +38,12 @@ export class SearchComponent implements OnInit {
             this.titleSearch = queryParam['title'];
             this.isbnSearch = queryParam['isbn'];
             this.formatIdSearch = queryParam['formatId'];
+            this.minPriceSearch = queryParam['price_gte'];
+            this.maxPriceSearch = queryParam['price_lte'];
+            this.minPageSearch = queryParam['pages_gte'];
+            this.maxPageSearch = queryParam['pages_lte'];
            console.log(queryParam)
-           if(this.authorSearch || this.titleSearch || this.isbnSearch || this.formatIdSearch){
+           if(this.authorSearch || this.titleSearch || this.isbnSearch || this.formatIdSearch || (this.minPriceSearch && this.maxPriceSearch) || (this.minPageSearch  || this.maxPageSearch)){
             this.searching()
            }
            
@@ -72,9 +75,6 @@ export class SearchComponent implements OnInit {
     if(this.formatIdSearch){
       myParams.formatId = this.formatIdSearch;
     }    
-    if(this.formatIdSearch){
-      myParams.formatId = this.formatIdSearch;
-    }  
     if(this.minPriceSearch){
       myParams.price_gte = this.minPriceSearch;
     }
@@ -87,26 +87,6 @@ export class SearchComponent implements OnInit {
     if(this.maxPageSearch){
       myParams.pages_lte= this.maxPageSearch;
     }
-    // let arrayBook = []
-    // if(myParams._priceStart && myParams._priceEnd ){
-    //   this.booksFromSearching = []
-    //   this.httpWorkService.getBooks().subscribe(res=>{
-
-    //     let arr = [];
-    //     for(let i in res){
-    //       arr.push(res[i])
-    //     }
-    //     arrayBook = arr;
-    //     this.booksFromSearching = arr.filter(e=>{
-    //       console.log(e)
-    //       return  (e.price < myParams._priceEnd) && (e.price > myParams._priceStart)
-    //     })
-    //     console.log(this.booksFromSearching)
-    //   })
-
-
-
-    // }
 
 
     console.log(myParams)

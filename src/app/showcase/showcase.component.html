@@ -17,12 +17,14 @@
             <th scope="col">formatId</th>
             <th scope="col">description</th>
             <th scope="col">price</th>
+            <th scope="col" colspan="2" style="text-align:center;">action</th>
+           
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let book of books; let i = index" (click)="redirectToBook(book)" style="cursor:pointer">
+          <tr *ngFor="let book of books; let i = index"  >
             <th scope="row">{{book.id}}</th>
-              <td>{{book.author}}</td>
+              <td >{{book.author}}</td>
               <td>{{book.title}}</td>
               <td>{{book.isbn}}</td>
               <td>{{book.pages}}</td>
@@ -32,6 +34,8 @@
               <td>{{book.formatId}}</td>
               <td>{{book.description}}</td>
               <td>{{book.price}}</td>
+              <td  (click)="redirectToBook(book)" style="font-weight:600; color:darkblue;cursor:pointer;">EDIT</td>
+              <td (click)="deleteBook(book)" style="cursor:pointer;color: red">DELETE</td>
           </tr>
       
         </tbody>
